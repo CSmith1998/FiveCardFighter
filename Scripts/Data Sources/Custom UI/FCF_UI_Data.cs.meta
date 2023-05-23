@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 25cd196180f963942bfebfaf79a84701
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - btnRectangleSprite: {fileID: 21300000, guid: 4d1455b16acc6cc449ccc4d4fe65c749, type: 3}
+  - btnSquareSprite: {fileID: 21300000, guid: ae8f68b5bde527b44b3d01eb0dcb5701, type: 3}
+  - btnCircleSprite: {fileID: 21300000, guid: 5659b073e19871d4da7394b6456da365, type: 3}
+  - btnDefaultIcon: {fileID: 21300000, guid: 3492e9eb6292141eb942d0c9beface29, type: 3}
+  - btnStartIcon: {fileID: 21300000, guid: 2750da8e4b41f294090c5d2a83c0992f, type: 3}
+  - btnSelectIcon: {fileID: 21300000, guid: c8a6fa5c2fe0d5a44aef5b5b11925971, type: 3}
+  - btnNextIcon: {fileID: 21300000, guid: ddf6af97ee5fb574a9f23107f5fda6de, type: 3}
+  - btnForfeitIcon: {fileID: 21300000, guid: a569a5f6afddaa34a9757d84bb77e9a1, type: 3}
+  - btnHelpIcon: {fileID: 21300000, guid: 7e666620d72e96e48b03c1a3bcfe774e, type: 3}
+  - defaultFrame: {fileID: 21300000, guid: 6643fd37fcdbc34418e6a05e5be4d027, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
