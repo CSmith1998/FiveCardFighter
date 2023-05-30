@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 using Random = System.Random;
 using static Graphics;
@@ -20,6 +20,21 @@ public static class Deck {
 
     #region Hero's Deck
     [HideInInspector] public static Stack<Card> Library = new Stack<Card>();
+    #region Related Methods
+    public static void InitializeLibrary() {
+        Library.Clear();
+
+        List<Card> temp = new List<Card>();
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Attack - Slash"), 7));
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Attack - Smash"), 5));
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Special - Parry"), 2));
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Defence - Shield"), 5));
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Special - Heal"), 4));
+        temp.AddRange(Enumerable.Repeat(AvailableCards.GetValueOrDefault("Detriment - Exhaustion"), 7));
+
+        //EstablishDeck(Shuffle(temp));
+    }
+    #endregion
     #endregion
 
     #region Hero's Graveyard

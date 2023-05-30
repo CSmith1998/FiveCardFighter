@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour {
                 } else { StunIndicator.SetActive(false); }
 
                 if(skipTurn) {
-                    var temp = SkippedIndicator.GetComponent<TextMeshProUGUI>();
+                    var temp = SkippedIndicator.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     if (exhausted) temp.SetText("You have three or more exhaustion!\nTurn Skipped!");
                     else temp.SetText("You ran out of time!\nTurn Skipped!");
                     SkippedIndicator.SetActive(true);
@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour {
     private void RoundHandler() {
         if(!WaitingForNewRound) {
             if(!skipTurn && !selectionMade) {
-                if(timer >= 0.00f) {
+                if(timer >= 0.000000f) {
                     var active = HandToggles.ActiveToggles().FirstOrDefault();
 
                     if(active != null) { 
@@ -189,7 +189,10 @@ public class GameManager : MonoBehaviour {
                     ActionTimer();
                 }
 
-                if(timer <= 0.00f) { skipTurn = true; }
+                if(timer <= 0.00f) {
+                    actionTimer.SetText("00:00:00");
+                    skipTurn = true;
+                }
             }
 
             if(timer <= 0.00f || selectionMade || skipTurn) {
@@ -630,7 +633,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void ActionTimer() { 
-        if(timer >= 0.00f) {
+        if(timer > 0.000000f) {
             timer -= Time.deltaTime;
 
             var ts = System.TimeSpan.FromSeconds(timer);
