@@ -57,7 +57,7 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 break;
         }
 
-        temp.transform.localPosition = Vector3.zero;
+        temp.transform.localPosition = new Vector3(0f, 115f, 0f);
         temp.SetActive(true);
     }
 

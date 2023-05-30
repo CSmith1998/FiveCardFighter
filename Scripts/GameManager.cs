@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour {
 
     private bool isPaused = false;
     private bool skipTurn = false;
+    private bool exhausted = false;
     private bool selectionMade = false;
     private bool playerParrying = false;
     private bool playerDefending = false;
@@ -141,6 +142,9 @@ public class GameManager : MonoBehaviour {
                 } else { StunIndicator.SetActive(false); }
 
                 if(skipTurn) {
+                    var temp = SkippedIndicator.GetComponent<TextMeshProUGUI>();
+                    if (exhausted) temp.SetText("You have three or more exhaustion!\nTurn Skipped!");
+                    else temp.SetText("You ran out of time!\nTurn Skipped!");
                     SkippedIndicator.SetActive(true);
                     Select.SetActive(false);
                 } else if(!skipTurn) {
@@ -389,6 +393,7 @@ public class GameManager : MonoBehaviour {
         PlayerCrit = false;
 
         skipTurn = false;
+        exhausted = false;
         if(enemyStunnedTurns > 0 && EnemyHealth >= 0) { 
             --enemyStunnedTurns; 
         }
@@ -634,7 +639,7 @@ public class GameManager : MonoBehaviour {
             if(timer <= 10.00f) {
                 actionTimer.color = Color.red;
             } else actionTimer.color = Color.white;
-        }
+        } else actionTimer.SetText("00:00:00");
     }
 
     public void InitializeCardOptions() {
@@ -685,6 +690,7 @@ public class GameManager : MonoBehaviour {
 
         if(exhaustion >= 3) {
             skipTurn = true;
+            exhausted = true;
             for(int i = 0; i < Hand.Count(); ++i) {
                 handToggleGroup.transform.GetChild(i + 1).GetComponent<Toggle>().interactable = false;
             }
