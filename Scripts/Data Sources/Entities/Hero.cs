@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class Hero { 
@@ -8,6 +9,13 @@ public static class Hero {
         [HideInInspector] public static int HeroCurrentHealth;
     #endregion
     [Space]
+    #region Additional Hero Details
+        [Header("Additional Hero Details")]
+        [HideInInspector] public static int HeroActionAmount;
+        [HideInInspector] public static int HeroExhaustionAmount;
+        [HideInInspector] public static bool HeroAchievedCritical = false;
+    #endregion
+    [Space]
     #region Hero Card Values
         [Header("Hero's Effectiveness")] 
         public static int HeroSlashDamage;
@@ -15,6 +23,15 @@ public static class Hero {
         public static int HeroDefenseEffectiveness;
         public static int HeroHealEffectiveness;
         public static int HeroExhaustionDamage;
+    #endregion
+    [Space]
+    #region Hero Critical Values
+        [Header("Hero's Critical Value")]
+        public static int HeroSlashCriticalGrowth;
+        public static int HeroSmashCriticalGrowth;
+        public static int HeroDefenseCriticalGrowth;
+        public static int HeroHealCriticalGrowth;
+        public static int HeroExhaustionCriticalGrowth;
     #endregion
     [Space]
     #region Hero Chance Values
