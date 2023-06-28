@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public static class Graphics {
+public class Graphics {
     #region Card Sprites
         [Header("Card Images")]
-        public static Sprite SlashSprite;
-        public static Sprite SmashSprite;
-        public static Sprite ParrySprite;
-        public static Sprite DefenseSprite;
-        public static Sprite HealingSprite;
-        public static Sprite ExhaustionSprite;
+        public Sprite SlashSprite;
+        public Sprite SmashSprite;
+        public Sprite ParrySprite;
+        public Sprite DefenseSprite;
+        public Sprite HealingSprite;
+        public Sprite ExhaustionSprite;
     #endregion
 }
